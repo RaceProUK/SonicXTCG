@@ -1,0 +1,145 @@
+---
+layout: navigable
+title: "Home"
+container-width: "middle"
+---
+<div class="row">
+    <div class="col text-center">
+        <h1>Sonic X TCG</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        {% if site.data.releases.stable %}
+            {% assign stable = site.data.releases.stable %}
+            <div class="btn-group btn-group-lg mb-3" role="group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="fas fa-fw fa-download"></span>
+                    Download
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{{stable.windows}}">
+                        <span class="fab fa-fw fa-windows"></span>
+                        Windows
+                    </a>
+                    <a class="dropdown-item" href="{{stable.linux}}">
+                        <span class="fab fa-fw fa-linux"></span>
+                        Linux
+                    </a>
+                    <a class="dropdown-item" href="{{stable.macos}}">
+                        <span class="fab fa-fw fa-apple"></span>
+                        macOS
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3" role="group">
+                <a class="btn btn-info" href="https://github.com/RaceProUK/SonicXTCG" target="_blank" rel="noreferrer">
+                    <span class="fab fa-fw fa-github"></span>
+                    <span>Source Code</span>
+                    <span class="fas fa-fw fa-external-link-alt"></span>
+                </a>
+                <a class="btn btn-info" href="https://github.com/RaceProUK/SonicXTCG/issues" target="_blank" rel="noreferrer">
+                    <span class="fas fa-fw fa-bug"></span>
+                    <span>Issue Tracker</span>
+                    <span class="fas fa-fw fa-external-link-alt"></span>
+                </a>
+            </div>
+        {% elsif site.data.releases.preview %}
+            {% assign preview = site.data.releases.preview %}
+            <div class="btn-group btn-group-lg mb-3" role="group">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="fas fa-fw fa-download"></span>
+                    Download {{preview.version}} (preview)
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{{preview.windows}}">
+                        <span class="fab fa-fw fa-windows"></span>
+                        Windows
+                    </a>
+                    <a class="dropdown-item" href="{{preview.linux}}">
+                        <span class="fab fa-fw fa-linux"></span>
+                        Linux
+                    </a>
+                    <a class="dropdown-item" href="{{preview.macos}}">
+                        <span class="fab fa-fw fa-apple"></span>
+                        macOS
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <h2>About</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p class="lead">
+            A PC version of a short-lived trading card game based on the Sonic anime that originally aired between 2003 and 2006?
+            It's more likely than you think!
+        </p>
+        <dl>
+            <dt>What is the Sonic X TCG?</dt>
+            <dd>
+                <p>
+                    The Sonic X Trading Card Game was a 2-player game created by Score Entertainment and debuted in 2005, and was
+                    initially sold as 10-card booster packs costing $2.99 each, with a minimum of 3 packs per player needed to play
+                    the game. There were 110 unique cards in total, with 5 having promotional variants with different art. 80 of
+                    the cards are Commons, with the remaining 30 being Rares, and each booster pack contained 9 Commons and 1 Rare.
+                </p>
+            </dd>
+            <dt>Sounds fun! Where can I get some?</dt>
+            <dd>
+                <p>
+                    If you're looking for brand-new cards, you're out of luck: despite the low entry cost (less than $9 per person)
+                    and the ease of gaining a complete collection, the cards sold poorly, and production ceased by 2007. If you don't
+                    mind buying used, there's listings on eBay and similar websites.
+                </p>
+            </dd>
+            <dt>I looked, but all I could find was the Sonic X Card Game, which looks a lot like the TCG.</dt>
+            <dd>
+                <p>
+                    That's because it is! The Card Game box set contains 5 copies each of 22 cards, 15 of which are from the TCG, and
+                    7 that would have been part of an expansion set of another 110 unique cards, also with 80 Commons and 30 Rares;
+                    you can tell the extra 7 as they have a Shadow icon in the top-right corner of the card. The rules also have an
+                    extension that allows up to four players to play, though extra cards will be required as the minimum player deck
+                    is still 30 cards.
+                </p>
+            </dd>
+            <dt>That makes 117 unique cards, correct? How many are in the PC game?</dt>
+            <dd>
+                <p>
+                    Correct, and all 117.
+                </p>
+            </dd>
+            <dt>What about the promo variants?</dt>
+            <dd>
+                <p>
+                    As the promotional cards are functionally identical to their regular equivalents, there's no plans to include them
+                    at this time, especially as I can only find information about four of the five promotional variants.
+                </p>
+            </dd>
+            <dt>What about the number of players?</dt>
+            <dd>
+                <p>
+                    The minimum is 2 players, and while in theory there's no maximum, for practical purposes the maximum is 8 players,
+                    with each player having their own copy of the game.
+                </p>
+            </dd>
+            <dt>How much will it cost?</dt>
+            <dd>
+                <p>
+                    Absolutely nothing! Just use the 'Download' button at the top of the page.
+                </p>
+            </dd>
+            <dt>But what if I want to donate anyway?</dt>
+            <dd>
+                <p>
+                    Keep your money and spend it on official Sonic products direct from Sega and their licenced partners 😉
+                </p>
+            </dd>
+        </dl>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+title: Sonic X TCG
+email: your-email@example.com
+description: >-
+  Sonic X TCG
+baseurl: ""
+url: ""
+github_username: RaceProUK
+twitter_username: RaceProUK
+
+sass:
+  style: compressed

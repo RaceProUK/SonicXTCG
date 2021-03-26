@@ -1,0 +1,122 @@
+---
+layout: navigable
+title: "Releases"
+container-width: "narrow"
+---
+<div class="row">
+    <div class="col text-center">
+        <h1>Releases</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        {% unless site.data.releases.stable and site.data.releases.preview %}
+            <div class="alert alert-info mb-0">
+                There are currently no releases available
+            </div>
+        {% endunless %}
+        {% if site.data.releases.stable %}
+            {% assign stable = site.data.releases.stable %}
+            <div class="alert alert-success">
+                <h2>
+                    Latest stable: {{stable.version}}
+                    <br />
+                    <small>Released {{stable.released}}</small>
+                </h2>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fas fa-fw fa-download"></span>
+                            Download
+                        </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{{stable.windows}}">
+                            <span class="fab fa-fw fa-windows"></span> Windows
+                        </a>
+                        <a class="dropdown-item" href="{{stable.linux}}">
+                            <span class="fab fa-fw fa-linux"></span> Linux
+                        </a>
+                        <a class="dropdown-item" href="{{stable.macos}}">
+                            <span class="fab fa-fw fa-apple"></span> macOS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if site.data.releases.preview %}
+            {% assign preview = site.data.releases.preview %}
+            <div class="alert alert-warning">
+                <h2>
+                    Latest preview: {{preview.version}}
+                    <br />
+                    <small>Released {{preview.released}}</small>
+                </h2>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fas fa-fw fa-download"></span>
+                            Download
+                        </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{{preview.windows}}">
+                            <span class="fab fa-fw fa-windows"></span> Windows
+                        </a>
+                        <a class="dropdown-item" href="{{preview.linux}}">
+                            <span class="fab fa-fw fa-linux"></span> Linux
+                        </a>
+                        <a class="dropdown-item" href="{{preview.macos}}">
+                            <span class="fab fa-fw fa-apple"></span> macOS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% if site.data.releases.older.size > 0 %}
+        <div class="col-12 text-center">
+            <div class="row">
+                <div class="col">
+                    <h2>Older releases</h2>
+                    <table class="table table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Released</th>
+                                <th>Downloads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for release in site.data.releases.older %}
+                                <tr>
+                                    <td class="lead">
+                                        {% if release.preview %}
+                                        <span class="badge badge-warning">{{release.version}}</span> {% else %}
+                                        <span class="badge badge-success">{{release.version}}</span> {% endif %}
+                                    </td>
+                                    <td>{{release.released}}</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="fas fa-fw fa-download"></span>
+                                                        Download
+                                                    </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="{{release.windows}}">
+                                                    <span class="fab fa-fw fa-windows"></span> Windows
+                                                </a>
+                                                <a class="dropdown-item" href="{{release.linux}}">
+                                                    <span class="fab fa-fw fa-linux"></span> Linux
+                                                </a>
+                                                <a class="dropdown-item" href="{{release.macos}}">
+                                                    <span class="fab fa-fw fa-apple"></span> macOS
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
