@@ -28,7 +28,7 @@ title: "Gallery"
                             {% assign itemclass = "carousel-item" %}
                         {% endif %}
                         <div class="{{itemclass}}">
-                            <img src="/assets/images/{{slide.file}}" alt="{{slide.alt}}" class="d-block mw-100 mx-auto" />
+                            <img src="{{site.baseurl}}/assets/images/{{slide.file}}" alt="{{slide.alt}}" class="d-block mw-100 mx-auto" />
                             <div class="carousel-caption">
                                 <h2 class="h5">{{slide.label}}</h2>
                                 <p>{{slide.caption}}</p>
