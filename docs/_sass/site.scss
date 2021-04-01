@@ -42,12 +42,33 @@ div.alert {
 }
 
 h1 img,
+.h1 img {
+    height: $h1-font-size;
+}
+
 h2 img,
+.h2 img {
+    height: $h2-font-size;
+}
+
 h3 img,
+.h3 img {
+    height: $h3-font-size;
+}
+
 h4 img,
+.h4 img {
+    height: $h4-font-size;
+}
+
 h5 img,
-h6 img {
-    height: 6rem;
+.h5 img {
+    height: $h5-font-size;
+}
+
+h6 img,
+.h6 img {
+    height: $h6-font-size;
 }
 
 td,
