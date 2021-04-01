@@ -4,15 +4,11 @@ title: "Home"
 container-width: "middle"
 ---
 <div class="row">
-    <div class="col text-center">
+    <div class="col-12">
         <h1>Sonic X Trading Card Game</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col text-center">
         {% if site.data.releases.stable %}
             {% assign stable = site.data.releases.stable %}
-            <div class="btn-group btn-group-lg mb-3" role="group">
+            <div class="btn-group btn-group-lg mb-3">
                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="fas fa-fw fa-download"></span>
                     Download
@@ -32,21 +28,9 @@ container-width: "middle"
                     </a>
                 </div>
             </div>
-            <div class="mb-3" role="group">
-                <a class="btn btn-info" href="https://github.com/RaceProUK/SonicXTCG" target="_blank" rel="noreferrer">
-                    <span class="fab fa-fw fa-github"></span>
-                    <span>Source Code</span>
-                    <span class="fas fa-fw fa-external-link-alt"></span>
-                </a>
-                <a class="btn btn-info" href="https://github.com/RaceProUK/SonicXTCG/issues" target="_blank" rel="noreferrer">
-                    <span class="fas fa-fw fa-bug"></span>
-                    <span>Issue Tracker</span>
-                    <span class="fas fa-fw fa-external-link-alt"></span>
-                </a>
-            </div>
         {% elsif site.data.releases.preview %}
             {% assign preview = site.data.releases.preview %}
-            <div class="btn-group btn-group-lg mb-3" role="group">
+            <div class="btn-group btn-group-lg mb-3 clearfix">
                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="fas fa-fw fa-download"></span>
                     Download {{preview.version}} (preview)
@@ -67,15 +51,23 @@ container-width: "middle"
                 </div>
             </div>
         {% endif %}
+        <div class="text-center mb-3">
+            <a class="btn btn-info" href="https://github.com/RaceProUK/SonicXTCG" target="_blank" rel="noreferrer">
+                <span class="fab fa-fw fa-github"></span>
+                <span>Source Code</span>
+                <span class="fas fa-fw fa-external-link-alt"></span>
+            </a>
+            <a class="btn btn-info" href="https://github.com/RaceProUK/SonicXTCG/issues" target="_blank" rel="noreferrer">
+                <span class="fas fa-fw fa-bug"></span>
+                <span>Issue Tracker</span>
+                <span class="fas fa-fw fa-external-link-alt"></span>
+            </a>
+        </div>
     </div>
 </div>
 <div class="row">
-    <div class="col text-center">
+    <div class="col-12">
         <h2>About</h2>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
         <p class="lead">
             A PC version of a short-lived trading card game based on the Sonic anime that originally aired between 2003 and 2006?
             It's more likely than you think!

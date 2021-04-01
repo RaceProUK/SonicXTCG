@@ -3,12 +3,8 @@ layout: navigable
 title: "Gallery"
 ---
 <div class="row">
-    <div class="col text-center">
+    <div class="col-12">
         <h1>Gallery</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col text-center">
         {% if site.data.gallery.size > 0 %}
             <div id="gallery" class="carousel slide carousel-fade" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -47,7 +43,7 @@ title: "Gallery"
             </div>
         </div>
     {% else %}
-        <div class="alert alert-info mb-0">
+        <div class="alert alert-info">
             There are currently no images available
         </div>
     {% endif %}

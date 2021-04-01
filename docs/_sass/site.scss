@@ -25,6 +25,31 @@ $dropdown-border-color: $body-color;
 $dropdown-link-color: $body-color;
 $headings-font-weight: 700;
 @import "../_modules/bootstrap/scss/bootstrap";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+div.alert {
+    @extend .text-center;
+}
+
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img {
+    height: 6rem;
+}
+
 td,
 th {
     @extend .align-middle;
