@@ -192,6 +192,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.uiextensions": {
+      "version": "2.2.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.org"
+    },
     "net.tnrd.humanizr": {
       "version": "https://github.com/Thundernerd/Unity3D-Humanizr.git",
       "depth": 0,

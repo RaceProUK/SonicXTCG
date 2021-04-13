@@ -30,15 +30,12 @@ public class OptionsManager : MonoBehaviour
         (  "Mania", "Sonic Mania"                )
     };
 
-    private void Start()
-    {
-        SoundTheme.AddOptions(SoundThemes.Select(t => new TMP_Dropdown.OptionData { text = t.Text }).ToList());
-        Resolution.AddOptions(Screen.resolutions.Select(r => new TMP_Dropdown.OptionData { text = r.ToString() }).ToList());
-        ScreenMode.AddOptions(Enum.GetNames(typeof(FullScreenMode)).Select(m => new TMP_Dropdown.OptionData { text = m.Humanize(LetterCasing.Title) }).ToList());
-    }
-
     private void OnEnable()
     {
+        if (SoundTheme.options.Count < 1) SoundTheme.AddOptions(SoundThemes.Select(t => new TMP_Dropdown.OptionData { text = t.Text }).ToList());
+        if (Resolution.options.Count < 1) Resolution.AddOptions(Screen.resolutions.Select(r => new TMP_Dropdown.OptionData { text = r.ToString() }).ToList());
+        if (ScreenMode.options.Count < 1) ScreenMode.AddOptions(Enum.GetNames(typeof(FullScreenMode)).Select(m => new TMP_Dropdown.OptionData { text = m.Humanize(LetterCasing.Title) }).ToList());
+
         OldMasterVolume = GameManager.MasterVolume;
         OldSoundTheme = GameManager.SoundTheme;
         OldResolution = GameManager.Resolution;
@@ -48,14 +45,6 @@ public class OptionsManager : MonoBehaviour
         SoundTheme.value = Array.IndexOf(SoundThemes, SoundThemes.First(t => string.Equals(t.Folder, GameManager.SoundTheme, StringComparison.OrdinalIgnoreCase)));
         Resolution.value = Array.IndexOf(Screen.resolutions, GameManager.Resolution);
         ScreenMode.value = (int)GameManager.ScreenMode;
-    }
-
-    private void OnDisable()
-    {
-        MasterVolume.onValueChanged.RemoveAllListeners();
-        SoundTheme.onValueChanged.RemoveAllListeners();
-        Resolution.onValueChanged.RemoveAllListeners();
-        ScreenMode.onValueChanged.RemoveAllListeners();
     }
 
     public void UpdateMasterVolume(float value)
@@ -70,9 +59,9 @@ public class OptionsManager : MonoBehaviour
 
     public void UpdateScreenMode(int value) => GameManager.ScreenMode = (FullScreenMode)value;
 
-    public void SaveOptions() => GameManager.SaveOptions();
+    public void Save() => GameManager.SaveOptions();
 
-    public void DiscardOptions()
+    public void Discard()
     {
         GameManager.MasterVolume = OldMasterVolume;
         GameManager.SoundTheme = OldSoundTheme;
