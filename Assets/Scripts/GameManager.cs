@@ -50,10 +50,7 @@ public class GameManager : MonoBehaviour
 
     public static void SaveOptions() => PlayerPrefs.Save();
 
-    private static void SetScreenResolutionAndMode()
-    {
-        Screen.SetResolution(Resolution.width, Resolution.height, ScreenMode, Resolution.refreshRate);
-    }
+    public void Quit() => StartCoroutine(instance.FadeOut(() => Application.Quit()));
 
     private void Start()
     {
@@ -71,11 +68,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static void SetGlobalVolume() => AudioListener.volume = MasterVolume / MaxVolume;
-
     private IEnumerator AutoDismissDisclaimer()
     {
         yield return new WaitForSecondsRealtime(5);
         StartCoroutine(instance.GetComponent<ScreenFader>().FadeOut(() => SceneManager.LoadScene("Menus")));
     }
+
+    private static void SetGlobalVolume() => AudioListener.volume = MasterVolume / MaxVolume;
+
+    private static void SetScreenResolutionAndMode() => Screen.SetResolution(Resolution.width, Resolution.height, ScreenMode, Resolution.refreshRate);
 }

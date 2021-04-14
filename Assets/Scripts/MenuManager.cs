@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour
 
     public void GoToCredits() => Transition(Credits);
 
-    public void QuitGame() => StartCoroutine(FindObjectOfType<ScreenFader>().FadeOut(() => Application.Quit()));
+    public void QuitGame() => FindObjectOfType<GameManager>().Quit();
 
     private void Transition(Canvas to)
     {
