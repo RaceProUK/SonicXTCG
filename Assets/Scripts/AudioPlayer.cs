@@ -10,6 +10,8 @@ public class AudioPlayer : MonoBehaviour
 
     public void MenuSelect() => PlaySound(nameof(MenuSelect));
 
+    public void PageFlip() => PlaySound(nameof(PageFlip));
+
     private void PlaySound(string name)
     {
         var clip = Resources.Load<AudioClip>($"Sounds/{GameManager.SoundTheme}/{name}");
