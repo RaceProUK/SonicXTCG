@@ -7,7 +7,7 @@ updates:
       interval: "daily"
 
   #Bootstrap
-  - package-ecosystem: "git submodule"
+  - package-ecosystem: "gitsubmodule"
     directory: "/"
     schedule:
       interval: "daily"
