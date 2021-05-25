@@ -5,9 +5,3 @@ updates:
     directory: "/docs"
     schedule:
       interval: "daily"
-
-  #Bootstrap
-  - package-ecosystem: "gitsubmodule"
-    directory: "/"
-    schedule:
-      interval: "daily"
