@@ -1,0 +1,7 @@
+version: 2
+updates:
+  #Ruby Gems
+  - package-ecosystem: "bundler"
+    directory: "/docs"
+    schedule:
+      interval: "daily"
