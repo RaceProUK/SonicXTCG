@@ -1,3 +1,1 @@
-$("#SegaTrigger").click(function() {
-    $("#SegaChant")[0].play();
-});
+document.getElementById("SegaTrigger").addEventListener("click", () => document.getElementById("SegaChant").play());
